@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>প্রোফাইল সম্পাদনা - ঢাকা কলেজিয়েট প্রাক্তন শিক্ষার্থী ফোরাম</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+        
+        body {
+            font-family: 'SolaimanLipi', 'Hind Siliguri', sans-serif;
+            background-color: #f5f7fb;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .profile-edit-header {
+            background: linear-gradient(to right, var(--primary-color), #4a6582);
+            color: white;
+            padding: 60px 0 100px;
+            position: relative;
+            margin-bottom: 80px;
+        }
+        
+        .profile-img-container {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+        }
+        
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            position: absolute;
+            bottom: -90px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .profile-img-edit {
+            position: absolute;
+            bottom: -70px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .profile-edit-section {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        
+        .form-control, .form-select {
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(44, 62, 80, 0.1);
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background: #1a2530;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary-color);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #f0f7ff;
+            color: var(--primary-color);
+            font-size: 18px;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .skill-tag {
+            display: inline-block;
+            background: #e1f0ff;
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 30px;
+            margin: 5px;
+            font-size: 14px;
+            position: relative;
+        }
+        
+        .skill-tag .remove-skill {
+            margin-left: 8px;
+            cursor: pointer;
+            color: var(--secondary-color);
+        }
+        
+        .add-skill-input {
+            display: inline-flex;
+            width: auto;
+            min-width: 150px;
+        }
+        
+        .education-item, .career-item {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            border: 1px solid #eee;
+            transition: all 0.3s;
+        }
+        
+        .education-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .remove-item {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: var(--secondary-color);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .remove-item:hover {
+            transform: scale(1.2);
+        }
+        
+        .privacy-option {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .privacy-option:hover {
+            background: #eef7ff;
+        }
+        
+        .privacy-option input {
+            margin-right: 10px;
+        }
+        
+        .add-education-btn-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-edit-header {
+                padding: 50px 0 80px;
+                margin-bottom: 60px;
+            }
+            
+            .profile-img-container {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .profile-img {
+                bottom: -70px;
+            }
+            
+            .profile-img-edit {
+                bottom: -50px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Profile Edit Header -->
+    <div class="profile-edit-header text-center">
+        <div class="container">
+            <h1 class="mb-3">প্রোফাইল সম্পাদনা</h1>
+            <p class="mb-0">আপনার ব্যক্তিগত ও পেশাগত তথ্য আপডেট করুন</p>
+            
+            <div class="profile-img-container">
+                <img src="../assets/images/logo.jpeg" alt="Profile" class="profile-img">
+                <div class="profile-img-edit">
+                    <i class="fas fa-camera"></i>
+                    <input type="file" class="d-none" id="profileImageUpload">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <form id="profileEditForm">
+            <div class="row">
+                <!-- Left Column -->
+                <div class="col-lg-8">
+                    <!-- Personal Information -->
+                    <div class="profile-edit-section">
+                        <h3 class="section-title">ব্যক্তিগত তথ্য</h3>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">নামের প্রথম অংশ</label>
+                                <input type="text" class="form-control" id="firstName" value="আহমেদ">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">নামের শেষ অংশ</label>
+                                <input type="text" class="form-control" id="lastName" value="রাহুল">
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="birthDate" class="form-label">জন্ম তারিখ</label>
+                                <input type="date" class="form-control" id="birthDate" value="1978-03-15">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="maritalStatus" class="form-label">বৈবাহিক অবস্থা</label>
+                                <select class="form-select" id="maritalStatus">
+                                    <option value="single">অবিবাহিত</option>
+                                    <option value="married" selected>বিবাহিত</option>
+                                    <option value="divorced">তালাকপ্রাপ্ত</option>
+                                    <option value="widowed">বিধবা/বিধুর</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <label for="currentAddress" class="form-label">বর্তমান ঠিকানা</label>
+                        <textarea class="form-control" id="currentAddress" rows="2">ধানমন্ডি, রোড ১২/এ, বাড়ি ৪৫, ঢাকা-১২০৯</textarea>
+                        
+                        <label for="permanentAddress" class="form-label">স্থায়ী ঠিকানা</label>
+                        <textarea class="form-control" id="permanentAddress" rows="2">বরিশাল, আগৈলঝাড়া, উপজেলা সদর</textarea>
+                    </div>
+                    
+                    <!-- Education Information -->
+                    <div class="profile-edit-section">
+                        <h3 class="section-title">শিক্ষাগত যোগ্যতা</h3>
+                        
+                        <div id="education-container">
+                            <div class="education-item">
+                                <div class="remove-item">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label">শিক্ষা প্রতিষ্ঠান</label>
+                                        <input type="text" class="form-control" value="ঢাকা কলেজিয়েট স্কুল">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">ডিগ্রী/শিক্ষা স্তর</label>
+                                        <input type="text" class="form-control" value="উচ্চমাধ্যমিক (এইচএসসি)">
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label">শুরু</label>
+                                        <input type="date" class="form-control" value="1993-01-01">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">সমাপ্তি</label>
+                                        <input type="date" class="form-control" value="1995-12-31">
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label">গ্রুপ/বিভাগ</label>
+                                        <input type="text" class="form-control" value="বিজ্ঞান">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">ফলাফল</label>
+                                        <input type="text" class="form-control" value="জিপিএ ৫.০০">
+                                    </div>
+                                </div>
+                                
+                                <label class="form-label">বিবরণ (ঐচ্ছিক)</label>
+                                <textarea class="form-control" rows="2">স্কুলের সেরা ছাত্রদের মধ্যে একজন হিসেবে স্বীকৃত</textarea>
+                            </div>
+                            
+                            <div class="education-item">
+                                <div class="remove-item">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label">শিক্ষা প্রতিষ্ঠান</label>
+                                        <input type="text" class="form-control" value="ঢাকা বিশ্ববিদ্যালয়">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">ডিগ্রী/শিক্ষা স্তর</label>
+                                        <input type="text" class="form-control" value="বিএসসি ইন কম্পিউটার সায়েন্স">
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label">শুরু</label>
+                                        <input type="date" class="form-control" value="1997-07-01">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">সমাপ্তি</label>
+                                        <input type="date" class="form-control" value="2002-06-30">
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label">বিভাগ</label>
+                                        <input type="text" class="form-control" value="কম্পিউটার বিজ্ঞান">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">ফলাফল</label>
+                                        <input type="text" class="form-control" value="সিজিপিএ ৩.৮৫">
+                                    </div>
+                                </div>
+                                
+                                <label class="form-label">বিবরণ (ঐচ্ছিক)</label>
+                                <textarea class="form-control" rows="2">থিসিস: আর্টিফিশিয়াল ইন্টেলিজেন্স</textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="add-education-btn-container">
+                            <button type="button" class="btn btn-outline-primary" id="add-education-btn">
+                                <i class="fas fa-plus me-2"></i> শিক্ষাগত যোগ্যতা যোগ করুন
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Career Information -->
+                    <div class="profile-edit-section">
+                        <h3 class="section-title">পেশাগত জীবন</h3>
+                        
+                        <div class="career-item">
+                            <div class="remove-item">
+                                <i class="fas fa-times-circle"></i>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="form-label">পদবি</label>
+                                    <input type="text" class="form-control" value="সফটওয়্যার ইঞ্জিনিয়ার">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">প্রতিষ্ঠান</label>
+                                    <input type="text" class="form-control" value="গুগল লিমিটেড">
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="form-label">শুরু</label>
+                                    <input type="date" class="form-control" value="2014-01-01">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">সমাপ্তি</label>
+                                    <input type="date" class="form-control" placeholder="বর্তমান চাকরির ক্ষেত্রে খালি রাখুন">
+                                </div>
+                            </div>
+                            
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="currentJob" checked>
+                                <label class="form-check-label" for="currentJob">
+                                    বর্তমান চাকরি
+                                </label>
+                            </div>
+                            
+                            <label class="form-label">কাজের বিবরণ</label>
+                            <textarea class="form-control" rows="3">অ্যান্ড্রয়েড অপারেটিং সিস্টেম টিমে প্রোডাক্ট ম্যানেজার হিসেবে কাজ করছি। আমাদের দলের মূল দায়িত্ব হল নতুন ফিচার ডিজাইন ও ইমপ্লিমেন্ট করা।</textarea>
+                        </div>
+                        
+                        <div class="career-item">
+                            <div class="remove-item">
+                                <i class="fas fa-times-circle"></i>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="form-label">পদবি</label>
+                                    <input type="text" class="form-control" value="সিনিয়র সফটওয়্যার ইঞ্জিনিয়ার">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">প্রতিষ্ঠান</label>
+                                    <input type="text" class="form-control" value="অ্যামাজন ওয়েব সার্ভিসেস">
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="form-label">শুরু</label>
+                                    <input type="date" class="form-control" value="2008-06-01">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">সমাপ্তি</label>
+                                    <input type="date" class="form-control" value="2013-12-31">
+                                </div>
+                            </div>
+                            
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="currentJob2">
+                                <label class="form-check-label" for="currentJob2">
+                                    বর্তমান চাকরি
+                                </label>
+                            </div>
+                            
+                            <label class="form-label">কাজের বিবরণ</label>
+                            <textarea class="form-control" rows="3">ক্লাউড কম্পিউটিং ডিভিশনে সিনিয়র সফটওয়্যার ইঞ্জিনিয়ার হিসেবে কাজ করেছি। মূলত AWS সার্ভিসের উন্নয়নের কাজ করেছি।</textarea>
+                        </div>
+                        
+                        <button type="button" class="btn btn-outline-primary">
+                            <i class="fas fa-plus me-2"></i> পেশাগত অভিজ্ঞতা যোগ করুন
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Right Column -->
+                <div class="col-lg-4">
+                    <!-- Contact Information -->
+                    <div class="profile-edit-section">
+                        <h3 class="section-title">যোগাযোগের তথ্য</h3>
+                        
+                        <label for="email" class="form-label">ইমেইল</label>
+                        <input type="email" class="form-control" id="email" value="rahul.ahmed@example.com">
+                        
+                        <label for="phone" class="form-label">ফোন নম্বর</label>
+                        <input type="tel" class="form-control" id="phone" value="+8801712345678">
+                        
+                        <label for="website" class="form-label">ওয়েবসাইট (ঐচ্ছিক)</label>
+                        <input type="url" class="form-control" id="website" placeholder="https://yourwebsite.com">
+                        
+                        <h5 class="mt-4 mb-3">সামাজিক যোগাযোগ মাধ্যম</h5>
+                        
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="fab fa-facebook-f"></i>
+                            </span>
+                            <input type="url" class="form-control" placeholder="Facebook Profile URL">
+                        </div>
+                        
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="fab fa-linkedin-in"></i>
+                            </span>
+                            <input type="url" class="form-control" placeholder="LinkedIn Profile URL">
+                        </div>
+                        
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="fab fa-twitter"></i>
+                            </span>
+                            <input type="url" class="form-control" placeholder="Twitter Profile URL">
+                        </div>
+                        
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fab fa-instagram"></i>
+                            </span>
+                            <input type="url" class="form-control" placeholder="Instagram Profile URL">
+                        </div>
+                    </div>
+                    
+                    <!-- Skills & Interests -->
+                    <div class="profile-edit-section">
+                        <h3 class="section-title">দক্ষতা ও আগ্রহ</h3>
+                        
+                        <h5 class="mt-4 mb-3">দক্ষতা</h5>
+                        <div id="skills-container">
+                            <span class="skill-tag">জাভা <span class="remove-skill">&times;</span></span>
+                            <span class="skill-tag">পাইথন <span class="remove-skill">&times;</span></span>
+                            <span class="skill-tag">এন্ড্রয়েড ডেভেলপমেন্ট <span class="remove-skill">&times;</span></span>
+                            <span class="skill-tag">ক্লাউড কম্পিউটিং <span class="remove-skill">&times;</span></span>
+                        </div>
+                        
+                        <div class="input-group mt-3">
+                            <input type="text" class="form-control add-skill-input" id="newSkill" placeholder="নতুন দক্ষতা যোগ করুন">
+                            <button class="btn btn-outline-primary" type="button" id="addSkillBtn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        
+                        <h5 class="mt-4 mb-3">আগ্রহ</h5>
+                        <div id="interests-container">
+                            <span class="skill-tag">ফটোগ্রাফি <span class="remove-skill">&times;</span></span>
+                            <span class="skill-tag">ভ্রমণ <span class="remove-skill">&times;</span></span>
+                            <span class="skill-tag">বই পড়া <span class="remove-skill">&times;</span></span>
+                        </div>
+                        
+                        <div class="input-group mt-3">
+                            <input type="text" class="form-control add-skill-input" id="newInterest" placeholder="নতুন আগ্রহ যোগ করুন">
+                            <button class="btn btn-outline-primary" type="button" id="addInterestBtn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Privacy Settings -->
+                    <div class="profile-edit-section">
+                        <h3 class="section-title">গোপনীয়তা সেটিংস</h3>
+                        
+                        <div class="privacy-option">
+                            <input type="radio" name="privacy" id="privacyPublic" checked>
+                            <label for="privacyPublic" class="form-label mb-0">
+                                <strong>সবার জন্য উন্মুক্ত</strong><br>
+                                <small>আপনার প্রোফাইল সকলের জন্য দৃশ্যমান</small>
+                            </label>
+                        </div>
+                        
+                        <div class="privacy-option">
+                            <input type="radio" name="privacy" id="privacyAlumni">
+                            <label for="privacyAlumni" class="form-label mb-0">
+                                <strong>শুধুমাত্র প্রাক্তন শিক্ষার্থীদের জন্য</strong><br>
+                                <small>শুধুমাত্র ভেরিফাইড প্রাক্তন শিক্ষার্থীরা দেখতে পারবেন</small>
+                            </label>
+                        </div>
+                        
+                        <div class="privacy-option">
+                            <input type="radio" name="privacy" id="privacyPrivate">
+                            <label for="privacyPrivate" class="form-label mb-0">
+                                <strong>ব্যক্তিগত</strong><br>
+                                <small>শুধুমাত্র আপনি এবং অ্যাডমিন দেখতে পারবেন</small>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Save Buttons -->
+                    <div class="d-grid gap-3 mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-save me-2"></i> পরিবর্তনগুলি সংরক্ষণ করুন
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary btn-lg">
+                            <i class="fas fa-times me-2"></i> বাতিল করুন
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary btn-lg">
+                            <a href="profile.html">
+                        <i class="fas fa-edit me-1"></i>Home
+                    </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Profile image upload
+        document.querySelector('.profile-img-edit').addEventListener('click', function() {
+            document.getElementById('profileImageUpload').click();
+        });
+        
+        document.getElementById('profileImageUpload').addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                const reader = new FileReader();
+                
+                reader.onload = function(event) {
+                    document.querySelector('.profile-img').src = event.target.result;
+                }
+                
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        });
+        
+        // Add new skill
+        document.getElementById('addSkillBtn').addEventListener('click', function() {
+            const newSkill = document.getElementById('newSkill').value.trim();
+            if (newSkill) {
+                const skillTag = document.createElement('span');
+                skillTag.className = 'skill-tag';
+                skillTag.innerHTML = `${newSkill} <span class="remove-skill">&times;</span>`;
+                
+                document.getElementById('skills-container').appendChild(skillTag);
+                document.getElementById('newSkill').value = '';
+                
+                // Add remove functionality
+                skillTag.querySelector('.remove-skill').addEventListener('click', function() {
+                    skillTag.remove();
+                });
+            }
+        });
+        
+        // Add new interest
+        document.getElementById('addInterestBtn').addEventListener('click', function() {
+            const newInterest = document.getElementById('newInterest').value.trim();
+            if (newInterest) {
+                const interestTag = document.createElement('span');
+                interestTag.className = 'skill-tag';
+                interestTag.innerHTML = `${newInterest} <span class="remove-skill">&times;</span>`;
+                
+                document.getElementById('interests-container').appendChild(interestTag);
+                document.getElementById('newInterest').value = '';
+                
+                // Add remove functionality
+                interestTag.querySelector('.remove-skill').addEventListener('click', function() {
+                    interestTag.remove();
+                });
+            }
+        });
+        
+        // Remove existing skills/interests
+        document.querySelectorAll('.remove-skill').forEach(item => {
+            item.addEventListener('click', function() {
+                this.parentElement.remove();
+            });
+        });
+        
+        // Remove education/career items
+        document.querySelectorAll('.remove-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.closest('.education-item, .career-item').remove();
+            });
+        });
+        
+        // Add new education item
+        document.getElementById('add-education-btn').addEventListener('click', function() {
+            const educationContainer = document.getElementById('education-container');
+            const newIndex = educationContainer.children.length + 1;
+            
+            const newEducationItem = document.createElement('div');
+            newEducationItem.className = 'education-item';
+            newEducationItem.innerHTML = `
+                <div class="remove-item">
+                    <i class="fas fa-times-circle"></i>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">শিক্ষা প্রতিষ্ঠান</label>
+                        <input type="text" class="form-control" placeholder="শিক্ষা প্রতিষ্ঠানের নাম">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">ডিগ্রী/শিক্ষা স্তর</label>
+                        <input type="text" class="form-control" placeholder="ডিগ্রী বা শিক্ষার স্তর">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">শুরু</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">সমাপ্তি</label>
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">গ্রুপ/বিভাগ</label>
+                        <input type="text" class="form-control" placeholder="গ্রুপ বা বিভাগ">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">ফলাফল</label>
+                        <input type="text" class="form-control" placeholder="ফলাফল">
+                    </div>
+                </div>
+                <label class="form-label">বিবরণ (ঐচ্ছিক)</label>
+                <textarea class="form-control" rows="2" placeholder="বিবরণ"></textarea>
+            `;
+            
+            educationContainer.appendChild(newEducationItem);
+            
+            // Add remove functionality to the new item
+            newEducationItem.querySelector('.remove-item').addEventListener('click', function() {
+                newEducationItem.remove();
+            });
+        });
+        
+        // Form submission
+        document.getElementById('profileEditForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('আপনার প্রোফাইল সফলভাবে আপডেট করা হয়েছে!');
+            
+            // In a real application, you would submit the form data to the server here
+        });
+    </script>
+</body>
+</html>
