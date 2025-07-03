@@ -3,44 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>প্রাক্তন শিক্ষার্থী ফোরাম | ঢাকা কলেজিয়েট স্কুল</title>
+    <title>প্রাক্তন শিক্ষার্থী পরিষদ | উপকূলীয় আদর্শ উচ্চ বিদ্যালয়</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+
 </head>
 <body>
     <!-- Navigation -->
- <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">প্রাক্তন শিক্ষার্থী পরিষদ </a>
-
-        <div
-          class="offcanvas offcanvas-end"
-          tabindex="-1"
-          id="offcanvasNavbar"
-          aria-labelledby="offcanvasNavbarLabel"
-        >
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel">
-                <img src="assets/images/logo.png" alt="Logo" height="40" class="me-2">
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-              <li class="nav-item">
-                        <a class="nav-link active" href="index.html">হোম</a>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.png" alt="প্রাক্তন শিক্ষার্থী পরিষদ লোগো">
+                প্রাক্তন শিক্ষার্থী পরিষদ
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">হোম</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">আমাদের সম্পর্কে</a>
@@ -55,40 +51,119 @@
                         <a class="nav-link" href="blog.html">ব্লগ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">যোগাযোগ</a>
+                        <a class="nav-link active" href="contact.html">যোগাযোগ</a>
                     </li>
-            </ul>
-          </div>
+                </ul>
+                
+                <a href="dashboard.html" class="btn btn-login ms-lg-3">
+                    <i class="fas fa-sign-in-alt me-2"></i> লগ ইন
+                </a>
+            </div>
         </div>
-        <a class="btn btn-outline-light" href="dashboard.html">লগ ইন</a>
-        <button
-          class="navbar-toggler pe-0"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
     </nav>
 
-    <div class="hero-header">
-        <div class="container">
-            <h1>আমাদের সাথে যোগাযোগ</h1>
-            <p>প্রাক্তন শিক্ষার্থীদের এই প্ল্যাটফর্মটি সম্পর্কে জানুন</p>
-        </div>
+    <!-- Hero Section -->
+
+<div class="hero-header text-center text-white d-flex align-items-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">আমাদের সাথে যোগাযোগ</h1>
+        <p class="lead animate__animated animate__fadeInUp mt-3">প্রাক্তন শিক্ষার্থীদের এই প্ল্যাটফর্মটি সম্পর্কে জানুন</p>
+    </div>
+</div>
+
+       <section class="py-5">
+             <div class="container">
+    <div class="mb-4">
+      <h2 class="fw-bold">আমাদের টিম</h2>
+      <p>উপদেষ্টা, নির্বাহী কমিটি ও স্বেচ্ছাসেবক দল</p>
     </div>
 
+    <!-- Tab Navigation -->
+    <ul class="nav nav-tabs justify-content-center mb-4 text-dark" id="teamTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="advisors-tab" data-bs-toggle="tab" data-bs-target="#advisors" type="button" role="tab">উপদেষ্টা</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="executive-tab" data-bs-toggle="tab" data-bs-target="#executive" type="button" role="tab">নির্বাহী কমিটি</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="volunteers-tab" data-bs-toggle="tab" data-bs-target="#volunteers" type="button" role="tab">সদস্য</button>
+      </li>
+    </ul>
+
+    <!-- Tab Contents -->
+    <div class="tab-content" id="teamTabsContent">
+
+      <!-- Advisors -->
+      <div class="tab-pane fade show active" id="advisors" role="tabpanel">
+        <div class="row g-4 ">         
+    <table class="table table-hover" id="advisorTable">
+      <thead class="table-active">
+        <tr>
+          <th scope="col">ক্রঃ</th>
+            <th scope="col">ছবি</th>
+          <th scope="col">নাম</th>
+          <th scope="col">পদবী</th>
+          <th scope="col">মোবাইল</th>
+        </tr>
+      </thead>
+      <tbody id="advisorTableBody"></tbody>
+    </table>
+          
+        </div>
+      </div>
 
 
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
+
+      <!-- Executive Committee -->
+      <div class="tab-pane fade" id="executive" role="tabpanel">
+        <div class="row g-4">
+
+            <table class="table table-hover" id="executiveTable">
+            <thead class="table-active">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">নাম</th>
+                <th scope="col">পদবী</th>
+                <th scope="col">মোবাইল</th>
+              </tr>
+            </thead>
+            <tbody id="executiveTableBody">
+            </tbody>
+            </table>        
+        </div>
+      </div>
+
+      <!-- members -->
+      <div class="tab-pane fade" id="volunteers" role="tabpanel">
+        <div class="row g-4">
+            <table class="table table-hover" id="memberTable">
+                <thead class="table-active">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">নাম</th>
+                    <th scope="col">পদবী</th>
+                    <th scope="col">মোবাইল</th>
+                </tr>
+                </thead>
+                <tbody id="memberTableBody">
+    
+                </tbody>
+    
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </section>
+
+
+   <section id="contact" class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
                     <h2 class="fw-bold mb-4">যোগাযোগ করুন</h2>
                     <form id="contactForm">
                         <div class="mb-3">
@@ -110,63 +185,102 @@
                         <button type="submit" class="btn btn-primary">পাঠান</button>
                     </form>
                 </div>
-                <div class="col-lg-6">
-                    <div class="bg-light p-4 h-100 rounded">
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="contact-info">
                         <h3 class="fw-bold mb-4">আমাদের ঠিকানা</h3>
-                        <p><i class="fas fa-map-marker-alt me-2"></i> উপকূলীয় আদর্শ উচ্চ বিদ্যালয়, গহিরা, দোভাষীর হাট, আনোয়ারা, চট্টগ্রাম।</p>
-                        <p><i class="fas fa-phone me-2"></i> +৮৮০ ২-১২৩৪৫৬৭৮</p>
-                        <p><i class="fas fa-envelope me-2"></i> exstudentforum2013@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt me-2 text-primary"></i> উপকূলীয় আদর্শ উচ্চ বিদ্যালয় <br> গহিরা, দোভাষীর হাট, আনোয়ারা, চট্টগ্রাম।</p>
+                        <p><i class="fas fa-phone me-2 text-primary"></i> +৮৮০ ২-১২৩৪৫৬৭৮</p>
+                        <p><i class="fas fa-envelope me-2 text-primary"></i> exstudentforum2013@gmail.com</p>
                         
                         <h3 class="fw-bold mt-5 mb-3">সোশ্যাল মিডিয়া</h3>
                         <div>
-                            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                             <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                             <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-       <section class="py-5">
+
+
+
+
+
+
+
+   <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <h1>আমাদের ইতিহাস</h1>
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="প্রাক্তন শিক্ষার্থী পরিষদ লোগো">
+                        <div class="footer-logo-text">
+                            <h5>প্রাক্তন শিক্ষার্থী পরিষদ</h5>
+                            <p>উপকূলীয় আদর্শ উচ্চ বিদ্যালয়</p>
+                        </div>
+                    </div>
+                    <p class="footer-about">আমাদের স্কুলের প্রাক্তন শিক্ষার্থীদের জন্য একটি প্ল্যাটফর্ম। সংযোগ রাখুন, স্মৃতি রোমন্থন করুন এবং বর্তমান শিক্ষার্থীদের সহায়তা করুন।</p>
+                    <div class="footer-social d-flex">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-title">প্রয়োজনীয় লিংক</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="index.html">হোম</a></li>
+                        <li><a href="about.html">আমাদের সম্পর্কে</a></li>
+                        <li><a href="events.html">ইভেন্টস</a></li>
+                        <li><a href="gallery.html">গ্যালারি</a></li>
+                        <li><a href="blog.html">ব্লগ</a></li>
+                        <li><a href="contact.html">যোগাযোগ</a></li>
+                    </ul>
+                </div>
+                
+
+                
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="footer-title">নিউজলেটার</h5>
+                    <p>আমাদের ইভেন্ট ও আপডেট পেতে সাবস্ক্রাইব করুন</p>
+                    <form class="footer-newsletter">
+                        <input type="email" placeholder="আপনার ইমেইল ঠিকানা">
+                        <button type="submit">
+                            <i class="fas fa-paper-plane me-2"></i> সাবস্ক্রাইব
+                        </button>
+                    </form>
+                </div>
+            </div>
             
-            <!-- কন্টেন্ট যোগ করুন -->
+            
         </div>
-    </section>
-
-
-
-
-
-    
-  <!-- Footer -->
-    <footer class="py-4 bg-dark text-white">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 mb-3 mb-md-0">
-                    <div class="d-flex align-items-center">
-                        <img src="assets/images/logo.png" alt="Logo" height="40" class="me-3">
-                        <div>
-                            <h5 class="mb-0">উপকূলীয় আদর্শ উচ্চ বিদ্যালয়</h5>
-                            <p class="mb-0 small">প্রাক্তন শিক্ষার্থী পরিষদ</p>
+        <div class="footer-bottom">
+                <div class="row align-items-center m-1">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="copyright mb-0">© ২০২৩ প্রাক্তন শিক্ষার্থী পরিষদ উপকূলীয় আদর্শ উচ্চ বিদ্যালয় । সর্বস্বত্ব সংরক্ষিত।</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-bottom-links d-flex justify-content-center justify-content-md-end">
+                            <a href="#">গোপনীয়তা নীতি</a>
+                            <a href="#">শর্তাবলী</a>
+                            <a href="#">সাইট ম্যাপ</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0">&copy; ২০২৫ উপকূলীয় আদর্শ উচ্চ বিদ্যালয় প্রাক্তন শিক্ষার্থী পরিষদ। সর্বস্বত্ব সংরক্ষিত।</p>
-                </div>
             </div>
-        </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#" class="btn btn-primary back-to-top" title="Back to Top">
+    <a href="#" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
@@ -174,8 +288,100 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Lightbox JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+      <!-- Glide JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.5.0/glide.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Custom JS -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/form.js"></script>
+     <script src="assets/js/team.js"></script>
+    <script>
+        // Initialize AOS animation
+      AOS.init();
+
+        window.addEventListener('scroll', () => {
+            document.querySelector('.back-to-top').classList.toggle('active', window.scrollY > 300);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+
+        // Start counter when element is in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => {
+            observer.observe(counter);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Initialize testimonial slider
+        new Glide('.glide', {
+            type: 'carousel',
+            perView: 1,
+            gap: 30,
+            autoplay: 5000,
+            breakpoints: {
+                768: {
+                    perView: 1
+                }
+            }
+        }).mount();
+
+
+
+        
+    </script>
 </body>
 </html>

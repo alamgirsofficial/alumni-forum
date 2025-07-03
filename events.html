@@ -3,50 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>প্রাক্তন শিক্ষার্থী ফোরাম | ঢাকা কলেজিয়েট স্কুল</title>
+    <title>প্রাক্তন শিক্ষার্থী পরিষদ | উপকূলীয় আদর্শ উচ্চ বিদ্যালয়</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <!-- Glide JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.5.0/css/glide.core.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+
 </head>
 <body>
     <!-- Navigation -->
-   <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">প্রাক্তন শিক্ষার্থী পরিষদ </a>
-
-        <div
-          class="offcanvas offcanvas-end"
-          tabindex="-1"
-          id="offcanvasNavbar"
-          aria-labelledby="offcanvasNavbarLabel"
-        >
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel">
-                <img src="assets/images/logo.png" alt="Logo" height="40" class="me-2">
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-              <li class="nav-item">
-                        <a class="nav-link active" href="index.html">হোম</a>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.png" alt="প্রাক্তন শিক্ষার্থী পরিষদ লোগো">
+                প্রাক্তন শিক্ষার্থী পরিষদ
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">হোম</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">আমাদের সম্পর্কে</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="events.html">ইভেন্টস</a>
+                        <a class="nav-link active" href="events.html">ইভেন্টস</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="gallery.html">গ্যালারি</a>
@@ -57,101 +55,255 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">যোগাযোগ</a>
                     </li>
-            </ul>
-          </div>
+                </ul>
+                
+                <a href="dashboard.html" class="btn btn-login ms-lg-3">
+                    <i class="fas fa-sign-in-alt me-2"></i> লগ ইন
+                </a>
+            </div>
         </div>
-        <a class="btn btn-outline-light" href="dashboard.html">লগ ইন</a>
-        <button
-          class="navbar-toggler pe-0"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
     </nav>
 
 
+
     <div class="hero-header">
-        <div class="container">
-            <h1> আগামী ইভেন্টস</h1>
-            <p>প্রাক্তন শিক্ষার্থীদের এই প্ল্যাটফর্মটি সম্পর্কে জানুন</p>
+        <div class="container text-center text-white hero-content animate__animated animate__fadeIn">
+            <h1 class="hero-title animate__animated animate__fadeInDown">আমাদের ইভেন্ট গুলোতে যোগ দিন</h1>
+            <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">প্রাক্তন শিক্ষার্থীদের সাথে মিলিত হোন, স্মৃতিচারণ করুন এবং নতুন সম্পর্ক গড়ে তুলুন</p>
         </div>
     </div>
 
 
 
 
-
-    <!-- Upcoming Events -->
-    <section id="events" class="py-5 bg-light">
+        <!-- Upcoming Events -->
+        <section id="events" class="py-5 bg-light">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="fw-bold section-title">আগামী ইভেন্টস</h2>
-                <p class="lead">আমাদের আসন্ন কার্যক্রমে যোগ দিন</p>
+                <h2 class="section-title animate__animated animate__fadeIn">আগামী ইভেন্টস</h2>
+                <p class="section-subtitle animate__animated animate__fadeIn animate__delay-1s">আমাদের আসন্ন কার্যক্রমে অংশগ্রহণ করুন</p>
             </div>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 event-card">
-                        <div class="card-header bg-primary text-white">
-                            <i class="far fa-calendar-alt me-2"></i>১৫ ডিসেম্বর, ২০২৩
+            
+            <div class="row g-4">
+                <!-- Event 1 -->
+                <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp">
+                    <div class="event-card">
+                        <div class="event-header">
+                            <i class="far fa-calendar-alt"></i> ১৫ ডিসেম্বর, ২০২৩
                         </div>
-                        <img src="assets/images/events/bird.jpg" class="card-img-top" alt="বার্ষিক সম্মেলন">
-                        <div class="card-body">
-                            <h5 class="card-title">৭৫তম বার্ষিক সম্মেলন</h5>
-                            <p class="card-text text-muted">
-                                <i class="fas fa-map-marker-alt me-2"></i>স্কুল মাঠ ও অডিটোরিয়াম
+                        <img src="assets/images/events/bird.jpg" class="event-img" alt="বার্ষিক সম্মেলন">
+                        <div class="event-body">
+                            <h3 class="event-title">৭৫তম বার্ষিক সম্মেলন</h3>
+                            <p class="event-location">
+                                <i class="fas fa-map-marker-alt"></i> স্কুল মাঠ ও অডিটোরিয়াম
                             </p>
-                            <p class="card-text">আমাদের স্কুলের ৭৫তম প্রতিষ্ঠাবার্ষিকী উপলক্ষে বিশেষ সম্মেলন। সকল ব্যাচের শিক্ষার্থীদের জন্য উন্মুক্ত।</p>
+                            <p class="event-description">আমাদের স্কুলের ৭৫তম প্রতিষ্ঠাবার্ষিকী উপলক্ষে বিশেষ সম্মেলন। সকল ব্যাচের শিক্ষার্থীদের জন্য উন্মুক্ত।</p>
+                            <div class="event-meta">
+                                <span class="event-badge">নতুন</span>
+                                <span><i class="fas fa-users"></i> 150+ অংশগ্রহণকারী</span>
+                            </div>
                         </div>
-                        <div class="card-footer bg-white">
-                            <a href="events.html" class="btn btn-primary">বিস্তারিত</a>
+                        <div class="card-footer bg-white border-0 text-center py-3">
+                            <a href="event-details.html" class="btn btn-primary px-4">
+                                <i class="fas fa-info-circle me-2"></i> বিস্তারিত
+                            </a>
+                            <a href="#" class="btn btn-outline-primary px-4 ms-2">
+                                <i class="fas fa-ticket-alt me-2"></i> রেজিস্টার
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 event-card">
-                        <div class="card-header bg-primary text-white">
-                            <i class="far fa-calendar-alt me-2"></i>২০ জানুয়ারি, ২০২৪
+                
+                <!-- Event 2 -->
+                <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="event-card">
+                        <div class="event-header">
+                            <i class="far fa-calendar-alt"></i> ২০ জানুয়ারি, ২০২৪
                         </div>
-                        <img src="assets/images/events/bird.jpg" class="card-img-top" alt="ক্রীড়া প্রতিযোগিতা">
-                        <div class="card-body">
-                            <h5 class="card-title">প্রাক্তন শিক্ষার্থী ক্রীড়া প্রতিযোগিতা</h5>
-                            <p class="card-text text-muted">
-                                <i class="fas fa-map-marker-alt me-2"></i>স্কুল মাঠ
+                        <img src="assets/images/events/bird.jpg" class="event-img" alt="ক্রীড়া প্রতিযোগিতা">
+                        <div class="event-body">
+                            <h3 class="event-title">প্রাক্তন শিক্ষার্থী ক্রীড়া প্রতিযোগিতা</h3>
+                            <p class="event-location">
+                                <i class="fas fa-map-marker-alt"></i> স্কুল মাঠ
                             </p>
-                            <p class="card-text">বিভিন্ন ব্যাচের মধ্যে ক্রিকেট, ফুটবল ও ভলিবল টুর্নামেন্ট। রেজিস্ট্রেশন ডেডলাইন ১০ জানুয়ারি।</p>
+                            <p class="event-description">বিভিন্ন ব্যাচের মধ্যে ক্রিকেট, ফুটবল ও ভলিবল টুর্নামেন্ট। রেজিস্ট্রেশন ডেডলাইন ১০ জানুয়ারি।</p>
+                            <div class="event-meta">
+                                <span class="event-badge">রেজিস্ট্রেশন চলছে</span>
+                                <span><i class="fas fa-clock"></i> ৩ দিন ব্যাপী</span>
+                            </div>
                         </div>
-                        <div class="card-footer bg-white">
-                            <a href="events.html" class="btn btn-primary">বিস্তারিত</a>
+                        <div class="card-footer bg-white border-0 text-center py-3">
+                            <a href="event-details.html" class="btn btn-primary px-4">
+                                <i class="fas fa-info-circle me-2"></i> বিস্তারিত
+                            </a>
+                            <a href="#" class="btn btn-outline-primary px-4 ms-2">
+                                <i class="fas fa-ticket-alt me-2"></i> রেজিস্টার
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 event-card">
-                        <div class="card-header bg-primary text-white">
-                            <i class="far fa-calendar-alt me-2"></i>১০ ফেব্রুয়ারি, ২০২৪
+                
+                <!-- Event 3 -->
+                <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="event-card">
+                        <div class="event-header">
+                            <i class="far fa-calendar-alt"></i> ১০ ফেব্রুয়ারি, ২০২৪
                         </div>
-                        <img src="assets/images/events/bird.jpg" class="card-img-top" alt="শিক্ষা সেমিনার">
-                        <div class="card-body">
-                            <h5 class="card-title">ক্যারিয়ার গাইডেন্স সেমিনার</h5>
-                            <p class="card-text text-muted">
-                                <i class="fas fa-map-marker-alt me-2"></i>স্কুল অডিটোরিয়াম
+                        <img src="assets/images/events/bird.jpg" class="event-img" alt="শিক্ষা সেমিনার">
+                        <div class="event-body">
+                            <h3 class="event-title">ক্যারিয়ার গাইডেন্স সেমিনার</h3>
+                            <p class="event-location">
+                                <i class="fas fa-map-marker-alt"></i> স্কুল অডিটোরিয়াম
                             </p>
-                            <p class="card-text">সফল প্রাক্তন শিক্ষার্থীদের অভিজ্ঞতা শেয়ার এবং বর্তমান শিক্ষার্থীদের জন্য ক্যারিয়ার পরামর্শ।</p>
+                            <p class="event-description">সফল প্রাক্তন শিক্ষার্থীদের অভিজ্ঞতা শেয়ার এবং বর্তমান শিক্ষার্থীদের জন্য ক্যারিয়ার পরামর্শ।</p>
+                            <div class="event-meta">
+                                <span class="event-badge">বিশেষ আমন্ত্রণ</span>
+                                <span><i class="fas fa-microphone"></i> ৫ জন বক্তা</span>
+                            </div>
                         </div>
-                        <div class="card-footer bg-white">
-                            <a href="events.html" class="btn btn-primary">বিস্তারিত</a>
+                        <div class="card-footer bg-white border-0 text-center py-3">
+                            <a href="event-details.html" class="btn btn-primary px-4">
+                                <i class="fas fa-info-circle me-2"></i> বিস্তারিত
+                            </a>
+                            <a href="#" class="btn btn-outline-primary px-4 ms-2">
+                                <i class="fas fa-ticket-alt me-2"></i> রেজিস্টার
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+
+
+        <!-- Past Events Gallery -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title animate__animated animate__fadeIn">গত ইভেন্টস</h2>
+                <p class="section-subtitle animate__animated animate__fadeIn animate__delay-1s">আমাদের পূর্বের সফল আয়োজনসমূহ</p>
+            </div>
+            
+            <div class="row g-3">
+                <div class="col-lg-3 col-md-6 animate__animated animate__fadeIn">
+                    <div class="past-event-card">
+                        <img src="assets/images/events/image.jpg" class="img-fluid rounded" alt="গত ইভেন্ট ১">
+                        <div class="past-event-overlay">
+                            <h5>৬০তম বার্ষিকী</h5>
+                            <p>২০১৮</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 animate__animated animate__fadeIn animate__delay-1s">
+                    <div class="past-event-card">
+                        <img src="assets/images/events/bird.jpg" class="img-fluid rounded" alt="গত ইভেন্ট ২">
+                        <div class="past-event-overlay">
+                            <h5>স্পোর্টস ডে</h5>
+                            <p>২০১৯</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 animate__animated animate__fadeIn animate__delay-2s">
+                    <div class="past-event-card">
+                        <img src="assets/images/events/image.jpg" class="img-fluid rounded" alt="গত ইভেন্ট ৩">
+                        <div class="past-event-overlay">
+                            <h5>শিক্ষা সেমিনার</h5>
+                            <p>২০২০</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 animate__animated animate__fadeIn animate__delay-3s">
+                    <div class="past-event-card">
+                        <img src="assets/images/events/bird.jpg" class="img-fluid rounded" alt="গত ইভেন্ট ৪">
+                        <div class="past-event-overlay">
+                            <h5>সাংস্কৃতিক সন্ধ্যা</h5>
+                            <p>২০২২</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="text-center mt-4">
-                <a href="events.html" class="btn btn-outline-primary">সমস্ত ইভেন্ট দেখুন</a>
+                <a href="gallery.html" class="btn btn-primary px-4 py-2 animate__animated animate__fadeIn">
+                    <i class="fas fa-images me-2"></i> সম্পূর্ণ গ্যালারি দেখুন
+                </a>
             </div>
+        </div>
+    </section>
+
+   <!-- Testimonials -->
+    <section class="testimonial-slider py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title animate__animated animate__fadeIn">প্রতিক্রিয়া</h2>
+                <p class="section-subtitle animate__animated animate__fadeIn animate__delay-1s">প্রাক্তন শিক্ষার্থীদের মতামত</p>
+            </div>
+            
+            <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                    <div class="glide__slides">
+                        <!-- Testimonial 1 -->
+                        <div class="glide__slide">
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">প্রতি বছর এই সম্মেলনে অংশগ্রহণ আমার জন্য একটি আবেগের বিষয়। পুরনো বন্ধুদের সাথে দেখা, নতুনদের সাথে পরিচয় এবং স্কুলের স্মৃতিচারণ করা সত্যিই অনবদ্য অভিজ্ঞতা।</p>
+                                <div class="testimonial-author">
+                                    <img src="assets/images/alumni/profile.svg" alt="মোহাম্মদ রফিক">
+                                    <div class="author-info">
+                                        <h5>মোহাম্মদ রফিক</h5>
+                                        <p>১৯৯৫ ব্যাচ</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="glide__slide">
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">গত বছর প্রথমবারের মতো ক্রীড়া প্রতিযোগিতায় অংশ নিয়েছিলাম। আমাদের ব্যাচের সাথে আবারও দল গঠন করে খেলার অনুভূতি ছিল অসাধারণ। এই আয়োজনের জন্য প্রাক্তন পরিষদকে ধন্যবাদ।</p>
+                                <div class="testimonial-author">
+                                    <img src="assets/images/testimonials/2.jpg" alt="আনিকা তাবাসসুম">
+                                    <div class="author-info">
+                                        <h5>আনিকা তাবাসসুম</h5>
+                                        <p>২০০৫ ব্যাচ</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="glide__slide">
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">ক্যারিয়ার গাইডেন্স সেমিনারে বক্তা হিসেবে অংশগ্রহণ আমার জন্য সম্মানের ছিল। বর্তমান শিক্ষার্থীদের সাহায্য করতে পেরে আমি গর্বিত। এই ধরনের উদ্যোগ আমাদের স্কুলকে আলাদা করে তোলে।</p>
+                                <div class="testimonial-author">
+                                    <img src="assets/images/testimonials/3.jpg" alt="ড. সাইফুল ইসলাম">
+                                    <div class="author-info">
+                                        <h5>ড. সাইফুল ইসলাম</h5>
+                                        <p>১৯৮৮ ব্যাচ</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2 class="cta-title animate__animated animate__fadeInDown">আপনার ব্যাচের জন্য ইভেন্ট আয়োজন করতে চান?</h2>
+            <p class="cta-subtitle animate__animated animate__fadeIn animate__delay-1s">আমাদের সাথে যোগাযোগ করুন এবং আপনার পরিকল্পনা শেয়ার করুন। আমরা আপনাকে সার্বিক সহযোগিতা করব।</p>
+            <button class="cta-btn animate__animated animate__fadeInUp animate__delay-2s">
+                <i class="fas fa-paper-plane me-2"></i> বার্তা পাঠান
+            </button>
         </div>
     </section>
 
@@ -159,29 +311,74 @@
 
 
 
-    
     <!-- Footer -->
-    <footer class="py-4 bg-dark text-white">
+    <footer class="footer">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 mb-3 mb-md-0">
-                    <div class="d-flex align-items-center">
-                        <img src="assets/images/logo.png" alt="Logo" height="40" class="me-3">
-                        <div>
-                            <h5 class="mb-0">উপকূলীয় আদর্শ উচ্চ বিদ্যালয়</h5>
-                            <p class="mb-0 small">প্রাক্তন শিক্ষার্থী পরিষদ</p>
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="প্রাক্তন শিক্ষার্থী পরিষদ লোগো">
+                        <div class="footer-logo-text">
+                            <h5>প্রাক্তন শিক্ষার্থী পরিষদ</h5>
+                            <p>উপকূলীয় আদর্শ উচ্চ বিদ্যালয়</p>
+                        </div>
+                    </div>
+                    <p class="footer-about">আমাদের স্কুলের প্রাক্তন শিক্ষার্থীদের জন্য একটি প্ল্যাটফর্ম। সংযোগ রাখুন, স্মৃতি রোমন্থন করুন এবং বর্তমান শিক্ষার্থীদের সহায়তা করুন।</p>
+                    <div class="footer-social d-flex">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-title">প্রয়োজনীয় লিংক</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="index.html">হোম</a></li>
+                        <li><a href="about.html">আমাদের সম্পর্কে</a></li>
+                        <li><a href="events.html">ইভেন্টস</a></li>
+                        <li><a href="gallery.html">গ্যালারি</a></li>
+                        <li><a href="blog.html">ব্লগ</a></li>
+                        <li><a href="contact.html">যোগাযোগ</a></li>
+                    </ul>
+                </div>
+                
+
+                
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="footer-title">নিউজলেটার</h5>
+                    <p>আমাদের ইভেন্ট ও আপডেট পেতে সাবস্ক্রাইব করুন</p>
+                    <form class="footer-newsletter">
+                        <input type="email" placeholder="আপনার ইমেইল ঠিকানা">
+                        <button type="submit">
+                            <i class="fas fa-paper-plane me-2"></i> সাবস্ক্রাইব
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="footer-bottom">
+                <div class="row align-items-center m-1">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="copyright mb-0">© ২০২৩ প্রাক্তন শিক্ষার্থী পরিষদ উপকূলীয় আদর্শ উচ্চ বিদ্যালয় । সর্বস্বত্ব সংরক্ষিত।</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-bottom-links d-flex justify-content-center justify-content-md-end">
+                            <a href="#">গোপনীয়তা নীতি</a>
+                            <a href="#">শর্তাবলী</a>
+                            <a href="#">সাইট ম্যাপ</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0">&copy; ২০২৫ উপকূলীয় আদর্শ উচ্চ বিদ্যালয় প্রাক্তন শিক্ষার্থী পরিষদ। সর্বস্বত্ব সংরক্ষিত।</p>
-                </div>
             </div>
-        </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#" class="btn btn-primary back-to-top" title="Back to Top">
+    <a href="#" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
@@ -189,8 +386,99 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Lightbox JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+      <!-- Glide JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.5.0/glide.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Custom JS -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/form.js"></script>
+    <script>
+        // Initialize AOS animation
+      AOS.init();
+
+        window.addEventListener('scroll', () => {
+            document.querySelector('.back-to-top').classList.toggle('active', window.scrollY > 300);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+
+        // Start counter when element is in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => {
+            observer.observe(counter);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Initialize testimonial slider
+        new Glide('.glide', {
+            type: 'carousel',
+            perView: 1,
+            gap: 30,
+            autoplay: 5000,
+            breakpoints: {
+                768: {
+                    perView: 1
+                }
+            }
+        }).mount();
+
+
+
+        
+    </script>
 </body>
 </html>
